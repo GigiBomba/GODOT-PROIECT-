@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://4pk4fvlgsngt"]
+
+[ext_resource type="PackedScene" uid="uid://bnpt05411oa58" path="res://scenes/train.tscn" id="1_lmi6m"]
+[ext_resource type="Script" uid="uid://ckpddqvrftuoc" path="res://scripts/camera_2d.gd" id="2_4mso1"]
+[ext_resource type="PackedScene" uid="uid://cefb7hyyb435i" path="res://scenes/backround_peisaj_intro.tscn" id="3_hftoc"]
+
+[node name="INTRO" type="Node2D"]
+position = Vector2(0, 2)
+
+[node name="TRAIN" parent="." instance=ExtResource("1_lmi6m")]
+position = Vector2(0, -3)
+
+[node name="Camera2D" type="Camera2D" parent="TRAIN"]
+position = Vector2(-12.000001, -15)
+rotation = -3.2026792
+scale = Vector2(100, 100)
+script = ExtResource("2_4mso1")
+
+[node name="Timer" type="Timer" parent="TRAIN/Camera2D"]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="BACKROUND PEISAJ INTRO" parent="TRAIN" instance=ExtResource("3_hftoc")]
+show_behind_parent = true
+scroll_offset = Vector2(0, -57)
+
+[connection signal="timeout" from="TRAIN/Camera2D/Timer" to="TRAIN/Camera2D" method="_on_timer_timeout"]
