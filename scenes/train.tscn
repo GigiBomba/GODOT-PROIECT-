@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnpt05411oa58"]
+
+[ext_resource type="Texture2D" uid="uid://dptiq0io18dq6" path="res://assets/sprites/ghost_train.png" id="1_d43s7"]
+[ext_resource type="Texture2D" uid="uid://b2urnh4fgpn5l" path="res://assets/sprites/ghost_passanger_car.png" id="2_6b7q7"]
+
+[node name="TRAIN" type="Node2D"]
+position = Vector2(-1, -2)
+
+[node name="TRAIN MAIN CAR" type="Sprite2D" parent="."]
+position = Vector2(-110, -18)
+scale = Vector2(1.3916016, 1.3886718)
+texture = ExtResource("1_d43s7")
+
+[node name="PASSENGER CABIN 1" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(43.093338, 1.9808509)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")
+
+[node name="PASSENGER CABIN 2" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(71.765335, 1.980851)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")
+
+[node name="PASSENGER CABIN 3" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(100.43733, 1.980851)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")
+
+[node name="PASSENGER CABIN 4" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(129.30438, 1.980851)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")
+
+[node name="PASSENGER CABIN 5" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(157.78134, 1.980851)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")
+
+[node name="PASSENGER CABIN 6" type="Sprite2D" parent="TRAIN MAIN CAR"]
+position = Vector2(186.45334, 1.980851)
+scale = Vector2(0.9607201, 0.8333333)
+texture = ExtResource("2_6b7q7")

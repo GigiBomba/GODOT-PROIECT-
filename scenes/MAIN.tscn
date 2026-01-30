@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://4pk4fvlgsngt"]
+
+[ext_resource type="PackedScene" uid="uid://bnpt05411oa58" path="res://scenes/train.tscn" id="1_vxwnn"]
+[ext_resource type="Script" uid="uid://ckpddqvrftuoc" path="res://scenes/camera_2d.gd" id="2_apk53"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 2)
+
+[node name="TRAIN" parent="." instance=ExtResource("1_vxwnn")]
+position = Vector2(1, -2)
+
+[node name="Camera2D" type="Camera2D" parent="TRAIN"]
+position = Vector2(-13.999996, -12.000001)
+rotation = -3.2026792
+scale = Vector2(100, 100)
+script = ExtResource("2_apk53")
+
+[node name="Timer" type="Timer" parent="TRAIN/Camera2D"]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TRAIN/Camera2D/Timer" to="TRAIN/Camera2D" method="_on_timer_timeout"]
