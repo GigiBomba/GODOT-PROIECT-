@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvk0rn2p7auch"]
+[gd_scene load_steps=5 format=3 uid="uid://bvk0rn2p7auch"]
 
 [ext_resource type="Script" uid="uid://cndjkwkeysvaj" path="res://scripts/character_body_2d.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://p53wvkuvydvw" path="res://assets/sprites/idee cap main character joc (1).png" id="2_g2els"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2els")
+}],
+"loop": true,
+"name": &"Placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(10, 21)
 
 [node name="PLAYER" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.555, 0.476)
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+animation = &"Placeholder"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_dqkch")
